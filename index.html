@@ -1,1 +1,87 @@
-<h1>hello buddy</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Webix Infoway</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    .ad-box {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ad-box a,
+    .ad-box img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .ad-box img {
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="ad-box" id="adBox"></div>
+
+<script>
+  const ads = [
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/ottocean.png",
+      link: "https://ottocean.com/store/aff.php?aff=1014"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/freegotv.png",
+      link: "https://freegotv.com/billing/aff.php?aff=168"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/4kiptvlive.png",
+      link: "https://www.4kiptvlive.org?ref=52"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/trendyscreen.png",
+      link: "https://trendyscreen.com/shop/aff.php?aff=730"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/doubleclicktv.png",
+      link: "https://doubleclicktv.com/billing/aff.php?aff=33"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/tivi-live.png",
+      link: "https://tivi-live.com/billing/aff.php?aff=54"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/soraiptv.png",
+      link: "https://soraiptv.io/billing/aff.php?aff=25"
+    },
+    {
+      image: "https://best-iptv-free-trials.github.io/ads/flash4kiptv.png",
+      link: "https://flash4kiptv.com/whmcs/aff.php?aff=42"
+    }
+  ];
+
+  function loadRandomAd() {
+    const randomAd = ads[Math.floor(Math.random() * ads.length)];
+    document.getElementById("adBox").innerHTML = `
+      <a href="${randomAd.link}" target="_blank" rel="noopener noreferrer">
+        <img src="${randomAd.image}" alt="Advertisement">
+      </a>
+    `;
+  }
+
+  loadRandomAd();
+  setInterval(loadRandomAd, 5000);
+</script>
+</body>
+</html>
