@@ -1,7 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>  body {    margin: 0;    padding: 0;    font-family: Arial, sans-serif;    background: #f5f7fb;    color: #222;    line-height: 1.7;  }  article {    max-width: 950px;    margin: 40px auto;    padding: 40px;    background: #ffffff;    border-radius: 16px;    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);  }  h1 {    font-size: 38px;    line-height: 1.25;    color: #0b1f3a;    margin-bottom: 25px;  }  h2 {    font-size: 28px;    color: #0d47a1;    margin-top: 45px;    margin-bottom: 15px;    padding-bottom: 8px;    border-bottom: 3px solid #0d47a1;  }  h3 {    font-size: 21px;    color: #153e75;    margin-top: 28px;    margin-bottom: 10px;  }  p {    font-size: 17px;    margin-bottom: 18px;  }  strong {    color: #0d47a1;  }  ul {    margin: 20px 0;    padding-left: 25px;  }  ul li {    font-size: 16.5px;    margin-bottom: 10px;  }  table {    width: 100%;    border-collapse: collapse;    margin: 25px 0;    background: #fff;    overflow: hidden;    border-radius: 10px;  }  table th {    background: #0d47a1;    color: #ffffff;    padding: 14px;    text-align: left;    font-size: 16px;  }  table td {    padding: 14px;    border: 1px solid #ddd;    font-size: 16px;  }  table tr:nth-child(even) {    background: #f0f4fa;  }  table tr:hover {    background: #e8f1ff;  }  a {    color: #0d47a1;    text-decoration: none;  }  a:hover {    text-decoration: underline;  }  .highlight-box {    background: #eef6ff;    border-left: 5px solid #0d47a1;    padding: 18px 22px;    margin: 25px 0;    border-radius: 8px;  }  @media (max-width: 768px) {    article {      margin: 15px;      padding: 22px;    }    h1 {      font-size: 30px;    }    h2 {      font-size: 24px;    }    h3 {      font-size: 20px;    }    p,    ul li,    table td,    table th {      font-size: 15.5px;    }    table {      display: block;      overflow-x: auto;      white-space: nowrap;    }  }</style>
+  <style>  body {    margin: 0;    padding: 0;    font-family: Arial, sans-serif;    background: #f5f7fb;    color: #222;    line-height: 1.7;  }  .iptv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.iptv-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  border: 1px solid #e5eaf2;
+}
+
+.iptv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.iptv-card h3 {
+  color: #0d47a1;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.iptv-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #444;
+}
+
+.iptv-card ul {
+  padding-left: 20px;
+  margin-bottom: 22px;
+}
+
+.iptv-card ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+  color: #333;
+}
+
+.iptv-btn {
+  display: inline-block;
+  background: #0d47a1;
+  color: #ffffff;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.iptv-btn:hover {
+  background: #08306b;
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+
+  .iptv-card {
+    padding: 20px;
+  }
+
+  .iptv-card h3 {
+    font-size: 21px;
+  }
+
+} article {    max-width: 950px;    margin: 40px auto;    padding: 40px;    background: #ffffff;    border-radius: 16px;    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);  }  h1 {    font-size: 38px;    line-height: 1.25;    color: #0b1f3a;    margin-bottom: 25px;  }  h2 {    font-size: 28px;    color: #0d47a1;    margin-top: 45px;    margin-bottom: 15px;    padding-bottom: 8px;    border-bottom: 3px solid #0d47a1;  }  h3 {    font-size: 21px;    color: #153e75;    margin-top: 28px;    margin-bottom: 10px;  }  p {    font-size: 17px;    margin-bottom: 18px;  }  strong {    color: #0d47a1;  }  ul {    margin: 20px 0;    padding-left: 25px;  }  ul li {    font-size: 16.5px;    margin-bottom: 10px;  }  table {    width: 100%;    border-collapse: collapse;    margin: 25px 0;    background: #fff;    overflow: hidden;    border-radius: 10px;  }  table th {    background: #0d47a1;    color: #ffffff;    padding: 14px;    text-align: left;    font-size: 16px;  }  table td {    padding: 14px;    border: 1px solid #ddd;    font-size: 16px;  }  table tr:nth-child(even) {    background: #f0f4fa;  }  table tr:hover {    background: #e8f1ff;  }  a {    color: #0d47a1;    text-decoration: none;  }  a:hover {    text-decoration: underline;  }  .highlight-box {    background: #eef6ff;    border-left: 5px solid #0d47a1;    padding: 18px 22px;    margin: 25px 0;    border-radius: 8px;  }  @media (max-width: 768px) {    article {      margin: 15px;      padding: 22px;    }    h1 {      font-size: 30px;    }    h2 {      font-size: 24px;    }    h3 {      font-size: 20px;    }    p,    ul li,    table td,    table th {      font-size: 15.5px;    }    table {      display: block;      overflow-x: auto;      white-space: nowrap;    }  }</style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -140,6 +211,206 @@
         </tr>
       </tbody>
     </table>
+
+    <h2>Best IPTV Free Trial Providers in 2026</h2>
+
+<p>
+  Below are some of the most popular IPTV providers offering premium streaming services, live TV channels, sports coverage, movies, and IPTV free trial options for users worldwide.
+</p>
+
+<div class="iptv-grid">
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>Tivi-Live IPTV</h3>
+    <p>
+      Tivi-Live IPTV offers premium live TV streaming with HD channels, sports packages, movies, and international entertainment.
+    </p>
+
+    <ul>
+      <li>HD & 4K Streaming</li>
+      <li>Sports & PPV Channels</li>
+      <li>Fast Activation</li>
+      <li>Firestick Compatible</li>
+    </ul>
+
+    <a href="https://tivi-live.com/billing/aff.php?aff=54" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>Flash4K IPTV</h3>
+    <p>
+      Flash4K IPTV provides high-quality IPTV subscriptions with stable servers, premium channels, and VOD content.
+    </p>
+
+    <ul>
+      <li>4K IPTV Channels</li>
+      <li>Worldwide Coverage</li>
+      <li>Movies & Series</li>
+      <li>Anti-Freeze Technology</li>
+    </ul>
+
+    <a href="https://flash4kiptv.com/whmcs/aff.php?aff=42" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>Zorba Network IPTV</h3>
+    <p>
+      Zorba Network IPTV delivers live TV, entertainment channels, and premium sports streaming with reliable uptime.
+    </p>
+
+    <ul>
+      <li>Stable IPTV Servers</li>
+      <li>HD Streaming</li>
+      <li>International Channels</li>
+      <li>24/7 Support</li>
+    </ul>
+
+    <a href="https://www.zorba.network/customer/aff.php?aff=2" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>Krooz TV</h3>
+    <p>
+      Krooz TV is a popular IPTV service known for premium sports channels, live TV streaming, and smooth playback.
+    </p>
+
+    <ul>
+      <li>Sports & PPV Access</li>
+      <li>Firestick Support</li>
+      <li>HD & FHD Quality</li>
+      <li>Fast Channel Loading</li>
+    </ul>
+
+    <a href="https://krooztv.net/billing/aff.php?aff=684" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>VocoTV IPTV</h3>
+    <p>
+      VocoTV IPTV offers premium entertainment, sports streaming, and international TV channels for multiple devices.
+    </p>
+
+    <ul>
+      <li>Premium IPTV Packages</li>
+      <li>Movies & TV Shows</li>
+      <li>Live Sports Channels</li>
+      <li>Multi-Device Compatibility</li>
+    </ul>
+
+    <a href="https://vocotv.com/billing/aff.php?aff=783" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>Double Click TV</h3>
+    <p>
+      Double Click TV provides affordable IPTV subscriptions with smooth streaming and premium entertainment channels.
+    </p>
+
+    <ul>
+      <li>Affordable IPTV Plans</li>
+      <li>HD Streaming</li>
+      <li>Sports Coverage</li>
+      <li>Quick Setup</li>
+    </ul>
+
+    <a href="https://doubleclicktv.com/billing/aff.php?aff=33" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>FreeGo TV IPTV</h3>
+    <p>
+      FreeGo TV IPTV includes international channels, live sports, movies, and IPTV streaming for Smart TVs and Firestick.
+    </p>
+
+    <ul>
+      <li>Live TV Channels</li>
+      <li>4K Streaming Support</li>
+      <li>Sports & Entertainment</li>
+      <li>Stable Connections</li>
+    </ul>
+
+    <a href="https://freegotv.com/billing/aff.php?aff=168" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>TereaTV IPTV</h3>
+    <p>
+      TereaTV IPTV offers premium IPTV subscriptions with fast activation and high-quality entertainment streaming.
+    </p>
+
+    <ul>
+      <li>Premium Sports Channels</li>
+      <li>Movies & Series</li>
+      <li>Instant Activation</li>
+      <li>Firestick Compatible</li>
+    </ul>
+
+    <a href="https://tereatv.com/billing/aff.php?aff=106" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>ViewTVY IPTV</h3>
+    <p>
+      ViewTVY IPTV provides global entertainment channels, sports coverage, and premium streaming quality.
+    </p>
+
+    <ul>
+      <li>International IPTV Channels</li>
+      <li>HD & FHD Quality</li>
+      <li>Movies & TV Series</li>
+      <li>Multi-Device Support</li>
+    </ul>
+
+    <a href="https://viewtvy.com/billing/aff.php?aff=2" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+  <!-- IPTV Card -->
+  <div class="iptv-card">
+    <h3>KroozTV.io</h3>
+    <p>
+      KroozTV.io is a premium IPTV provider with stable servers, sports channels, and live entertainment streaming.
+    </p>
+
+    <ul>
+      <li>Premium IPTV Streaming</li>
+      <li>4K Sports Channels</li>
+      <li>Fast IPTV Servers</li>
+      <li>Smart TV Support</li>
+    </ul>
+
+    <a href="https://krooztv.io/billing/aff.php?aff=9" target="_blank" class="iptv-btn">
+      Visit Website
+    </a>
+  </div>
+
+</div>
 
     <h2>IPTV Free Trial for Firestick</h2>
 
